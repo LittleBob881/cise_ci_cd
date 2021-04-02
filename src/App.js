@@ -1,25 +1,32 @@
-import React, { Component } from 'react';
+/* eslint-disable prettier/prettier */
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/button-has-type */
+import React, { Component } from "react"
+
 class App extends Component {
+  increment = this.makeIncrementer(1)
+
   constructor() {
-    super();
+    super()
     this.state = {
       count: 0,
     }
   }
-  makeIncrementer = amount => () =>
-    this.setState(prevState => ({
+
+  makeIncrementer = (amount) => () =>
+    this.setState((prevState) => ({
       count: prevState.count + amount,
-    }));
-  increment = this.makeIncrementer(1);
+    }))
+
   render() {
     return (
-      <div>ENSE701 Assessment 1A
-      S1 2021 Pg 3 of 6 copyright Jim Buchan
+      <div>
         <p>Count: {this.state.count}</p>
-        <button className="increment" onClick={this.increment}>Increment
-count</button>
+        <button className="increment" onClick={this.increment}>
+          Increment count
+        </button>
       </div>
     )
   }
 }
-export default App;
+export default App
